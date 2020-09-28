@@ -18,24 +18,20 @@ public class T5 implements Runnable {
     ThreadsList tl;//referencia do objeto q controla o sincronismo da lista de trheads
     int[][] A;//referencia da matriz A
     int[][] B;//referencia da matriz B
-    int[][] C;//referencia da matriz C
     int i;//copia do valor de i no momento da criacao da thread
-    int N;//copia do valor de N no momento da criacao da thread
 
-    public T5(ThreadsList tl, int[][] A, int[][] B, int[][] C, int i, int N) {
+    public T5(ThreadsList tl, int[][] A, int[][] B, int i) {
         this.tl = tl;
         this.A = A;
         this.B = B;
-        this.C = C;
         this.i = i;
-        this.N = N;
     }
 
     @Override
     public void run() {
-        for (int j = 0; j < N; j++){//para cada coluna é criada uma nova trhead
+        for (int j = 0; j < C.N; j++){//para cada coluna é criada uma nova trhead
             //esta classe ja possui o numera da linha q foi gerado pelo for no main
-                Thread localt4 = new Thread(new T4(tl, A, B, C, i, j, N));
+                Thread localt4 = new Thread(new T4(tl, A, B, i, j));
                 localt4.start();
                 tl.add(localt4);
             }

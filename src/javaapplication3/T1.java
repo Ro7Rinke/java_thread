@@ -22,16 +22,14 @@ public class T1 implements Runnable {
     ThreadsList tl;
     int[][] A;
     int[][] B;
-    int[][]C;
     int k;
     int i;
     int j;
 
-    public T1(ThreadsList tl,int[][] A, int[][] B, int[][] C, int i, int j, int k) {
+    public T1(ThreadsList tl,int[][] A, int[][] B, int i, int j, int k) {
         this.tl = tl;
         this.A = A;
         this.B = B;
-        this.C = C;
         this.k = k;
         this.i = i;
         this.j = j;
@@ -40,6 +38,7 @@ public class T1 implements Runnable {
     
     @Override
     public void run(){
-        C[i][j] = C[i][j] + A[i][k] * B[k][j];
+        C.setSingle((C.getSingle(i, j) + (A[i][k] * B[k][j])), i, j);
+//        C[i][j] = C[i][j] + A[i][k] * B[k][j];
     }
 }

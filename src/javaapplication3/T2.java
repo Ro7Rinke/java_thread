@@ -21,29 +21,24 @@ public class T2 implements Runnable {
     ThreadsList tl;
     int[][] A;
     int[][] B;
-    int[][] C;
     int i;
     int j;
-    int N;
 
-    public T2(ThreadsList tl, int[][] A, int[][] B, int[][] C, int i, int j, int N) {
+    public T2(ThreadsList tl, int[][] A, int[][] B, int i, int j) {
         this.tl = tl;
         this.A = A;
         this.B = B;
-        this.C = C;
         this.i = i;
         this.j = j;
-        this.N = N;
     }
 
     
     @Override
     public void run() {
-        for (int k = 0; k < N; k++) {
-            Thread localt1 = new Thread(new T1(tl, A, B, C, i, j, k));
+        for (int k = 0; k < C.N; k++) {
+            Thread localt1 = new Thread(new T1(tl, A, B, i, j, k));
             localt1.start();
             tl.add(localt1);
-//          C[i][j] = C[i][j] + A[i][k] * B[k][j];
         } // for-k
     }
 }

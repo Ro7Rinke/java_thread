@@ -19,25 +19,21 @@ public class T4 implements Runnable {
     ThreadsList tl;
     int[][] A;
     int[][] B;
-    int[][] C;
     int i;
     int j;
-    int N;
 
-    public T4(ThreadsList tl, int[][] A, int[][] B, int[][] C, int i, int j, int N) {
+    public T4(ThreadsList tl, int[][] A, int[][] B, int i, int j) {
         this.tl = tl;
         this.A = A;
         this.B = B;
-        this.C = C;
         this.i = i;
         this.j = j;
-        this.N = N;
     }
 
     @Override
     public void run() {
         A[i][j] = i + j;
         B[i][j] = i + j;//popula as matrizes
-        C[i][j] = 0;
+        C.setSingle(0, i, j);
     }
 }
