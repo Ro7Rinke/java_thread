@@ -18,7 +18,12 @@ public class JavaApplication3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        /*
+        o java 64 bits suporta ate 32072 threads 
+        o maior valor para N neste programa é 31
+        caso a thread com Runnable T1 seja eliminada e mantido sua tarefa sincrona o maximo para N sera 179
+        para um N maior é nescessario alterar o tamnho do espaço para endereçamento ou trabalhar com mais processos java
+        */
         boolean autoLoad = true;//para facilitar os testes, esta variavel controla 
         //se os valores das matrizes A e B serao lidos manualmente ou calculados de forma automatica
         
