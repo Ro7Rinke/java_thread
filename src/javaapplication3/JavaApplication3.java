@@ -50,7 +50,7 @@ public class JavaApplication3 {
             //prcurando uma idea mlr de como esperar a conclusao de todas as threads
         }
         
-        C.print();
+        C.print();//imprime a matriz C
         
     }
     
