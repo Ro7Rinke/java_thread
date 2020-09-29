@@ -68,7 +68,7 @@ public class App {
         
     }
     
-    public static int maxThreads = 0;
+//    public static int maxThreads = 0;
     
     public static boolean performanceMode = true;
     //caso habilitado as threads com Runnable T1 serao desativadas, mantendo o processo delas sincrono
