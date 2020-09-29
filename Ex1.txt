@@ -1,0 +1,29 @@
+Finish{
+    async{
+        Arrumar a cama
+    }
+    asynch{
+        Telefonar para familiares  
+    }
+    asynch{
+        Executar ciclo 1 em lavadora 
+        Executar ciclo 1 em secadora
+    }
+    asynch{
+        Executar ciclo 2 em lavadora
+        Executar ciclo 2 em secadora
+    }
+
+    asynch{
+        Finish{
+            asynch{
+                Comprar alimentos 
+            } 
+
+            asynch{
+                Limpar a geladeira
+            }   
+        }
+        armazenar na geladeira
+    }
+}
