@@ -19,7 +19,7 @@ public class App {
      */
     public static void main(String[] args) {
         /*
-        o java 64 bits suporta ate 32072 threads 
+        o java 64 bits suporta ate 32072 threads simultaneas
         caso a thread com Runnable T1 seja eliminada e mantido sua tarefa sincrona o maximo para N sobe
         para um N maior é nescessario alterar o tamnho do espaço para endereçamento ou trabalhar com mais processos java
         */
