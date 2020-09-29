@@ -1,0 +1,57 @@
+Finish{
+    
+    ler valor para N
+
+    criar lista de threads
+
+    se autoLoad{
+        Finish{
+            para i = 0 ate N{
+                async{
+                    async{
+                        para j = 0 ate N{
+                            async{
+                                popula matrizes
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }se nao{
+        para cada matriz{
+            para i = 0 ate N{
+                para j = 0 ate N{
+                    ler valor
+                    insere valor na matriz
+                }
+            }
+        }
+    }
+    Finish{
+        para i = 0 ate N{
+            async{
+                para j = 0 ate N{
+                    async{
+                        para k = 0 ate N{
+                            se performanceMode{
+                                calcula multiplicacao e soma na matriz C
+                            }se nao{
+                                async{
+                                    calcula multiplicacao e soma na matriz C
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    para i = 0 ate N{
+        para j = 0 ate N{
+            imprime valor de da matriz C
+        }
+    }
+
+}
