@@ -10,7 +10,9 @@ import java.util.Scanner;
 
 /**
  *
- * @author Ro7Rinke
+ * @author Igor Rinke - 23840-2
+ * @author Guilherme Machado - 23839-4
+ * 
  */
 public class App {
 
