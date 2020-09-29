@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication3;
+package threadripper;
 
 import java.util.ArrayList;
 
@@ -38,7 +38,6 @@ public class T1 implements Runnable {
     
     @Override
     public void run(){
-        C.setSingle((C.getSingle(i, j) + (A[i][k] * B[k][j])), i, j);
-//        C[i][j] = C[i][j] + A[i][k] * B[k][j];
+        C.setSingle((C.getSingle(i, j) + (A[i][k] * B[k][j])), i, j);//atribui sincronizado o valor na posicao da matriz C
     }
 }

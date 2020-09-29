@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication3;
+package threadripper;
 
 import java.util.ArrayList;
 
@@ -36,9 +36,16 @@ public class T2 implements Runnable {
     @Override
     public void run() {
         for (int k = 0; k < C.N; k++) {
-            Thread localt1 = new Thread(new T1(tl, A, B, i, j, k));
-            localt1.start();
-            tl.add(localt1);
+            if(App.performanceMode){//diminiu de threads
+                C.setSingle((C.getSingle(i, j) + (A[i][k] * B[k][j])), i, j);//atribui sincronizado o valor na posicao da matriz C
+            }else{
+                Thread localt1 = new Thread(new T1(tl, A, B, i, j, k));
+                localt1.start();
+                tl.add(localt1);
+//                App.maxThreads++;
+//                System.out.println(App.maxThreads);
+            }
+            
         } // for-k
     }
 }

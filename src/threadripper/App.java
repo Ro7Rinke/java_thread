@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication3;
+package threadripper;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Ro7Rinke
  */
-public class JavaApplication3 {
+public class App {
 
     /**
      * @param args the command line arguments
@@ -20,8 +20,7 @@ public class JavaApplication3 {
     public static void main(String[] args) {
         /*
         o java 64 bits suporta ate 32072 threads 
-        o maior valor para N neste programa é 31
-        caso a thread com Runnable T1 seja eliminada e mantido sua tarefa sincrona o maximo para N sera 179
+        caso a thread com Runnable T1 seja eliminada e mantido sua tarefa sincrona o maximo para N sobe
         para um N maior é nescessario alterar o tamnho do espaço para endereçamento ou trabalhar com mais processos java
         */
         boolean autoLoad = true;//para facilitar os testes, esta variavel controla 
@@ -57,6 +56,8 @@ public class JavaApplication3 {
             Thread localt3 = new Thread(new T3(tl, A, B, i));//inicia uma thread com uma classe runnable
             localt3.start();//inicia a thread
             tl.add(localt3);//add a thread em uma lista para posteriormente verificar qnts threads ainda estao vivas
+//            App.maxThreads++;
+//            System.out.println(App.maxThreads);
         } // for-i
         
         while(tl.verifyAlive()){//metodo q retorna se na lista de trheads possui alguma viva
@@ -66,6 +67,12 @@ public class JavaApplication3 {
         C.print();//imprime a matriz C
         
     }
+    
+    public static int maxThreads = 0;
+    
+    public static boolean performanceMode = true;
+    //caso habilitado as threads com Runnable T1 serao desativadas, mantendo o processo delas sincrono
+    //o ganho de performance sobe e é possivel q N seja maior
     
     public static void load(int[][] m){
         for(int i = 0; i < C.N; i++){

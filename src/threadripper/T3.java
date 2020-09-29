@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package javaapplication3;
+package threadripper;
 
 import java.util.ArrayList;
 
@@ -37,6 +37,8 @@ public class T3 implements Runnable{
                   Thread localt2 = new Thread(new T2(tl, A, B, i, j));
                   localt2.start();
                   tl.add(localt2);
+//                  App.maxThreads++;
+//                  System.out.println(App.maxThreads);
             } // for-j
     }
 }
